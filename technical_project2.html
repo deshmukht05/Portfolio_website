@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="stylesheet" href="technical_style.css">
+    <link rel="icon" type="image/x-icon" href="assests/Logo.png">
+    <title>Tushar Portfolio/Disney Clone</title>
+</head>
+<body>
+    <!---------------------- Navbar ---------------------------->
+    <nav>
+        <label class="logo">
+            <img src="assests/Profile.JPG" alt="" class="profile">
+            <a href="index.html">Tushar<span>.</span></a>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Designs</a></li>
+            <li><a href="index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!------------------- Recent Project-1 ---------------------->
+    <div class="container">
+        <div class="sub-heading">
+            <p>Project Details</p>
+        </div>
+
+        <div class="heading">
+            <h1><span>{Disney}</span> Clone WebApp</h1>
+            <p>An intuitive, mobile-friendly design for an Android app focused on enhancing user productivity <br>through sleek interfaces and seamless interactions.</p>
+        </div>
+
+        <div class="image-1">
+            <img src="assests/Technical_Project/Technical_project_2/technical_project_img_2.jpg" alt="recent_project_img_1">
+        </div>
+        <!-- <div class="image-2">
+            <img src="assests/Recent_Projects/Recent_Project_1_Images/recent_music_project_img_2.jpg" alt="recent_project_img_2">
+        </div> -->
+        
+        <div class="overview">
+            <h2>Overview</h2>
+            <p>My Figma-designed music app named "Lee Beatz" focuses on personalized music streaming with a clean, modern interface. The design emphasizes music discovery, curated playlists, and an engaging now-playing screen.
+            </p>
+        </div>
+
+        <div class="key_features">
+            <h2>Key Featuers</h2>
+            <ul class="features">
+                <li><b>Home & Personalized Recommendations:</b></li>
+                - <b>"Made for You" Section: </b>Curated playlists based on user preferences (e.g., Punjabi Pop, Bollywood Romance). <br>
+                - <b>"Popular & Trending": </b>Highlights trending tracks (e.g., Ranjita, Rajwa). <br>
+                - <b>"Editor’s Pick": </b>Expert-curated music collections (e.g., Gaming Music 2022, EDM Music 2022). <br>
+
+                <li><b>Music Playback & Now-Playing Screen:</b></li>
+                - <b>Now-Playing Bar: </b>Displays track info ("Na Ja" by Pav Dharia). <br>
+                - <b>Progress Bar: </b>Shows elapsed time (0:00 / 3:28). <br>
+                - <b>Visual Branding: </b>"WHITE HILL MUSIC PRESENTS" suggests label integration. <br>
+
+                <li><b>Navigation & Categories:</b></li>
+                - <b>Genre-Based Sections: </b>Punjabi Pop, Bollywood, Marathi, etc. <br>
+                - <b>Trending & New Releases: </b>Keeps users updated with fresh music. <br>
+
+                <li><b>Playlist & Queue Management:</b></li>
+                - <b>"Now Playing Playlist": </b>Allows users to see upcoming tracks. <br>
+                - <b>"New Music Hindi": </b>Dedicated section for latest Hindi releases. <br>
+
+                <li><b>Visual & Interactive Elements:</b></li>
+                - <b>Minimalist Layout: </b>Focus on album art and key controls. <br>
+                - <b>Time-Stamped Progress: </b>Enhances user control. <br>
+                
+            </ul>
+        </div>
+
+    </div>
+
+    <!-------------- Footer Design ------------------>
+    <footer class="footer-design">
+        <div class="center-text">#Designed By Tushar Deshmukh @2025</div>
+    </footer>
+
+    <!------------------- Lightbox/Popup ---------------------->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="caption"></div>
+    </div>
+
+    <script>
+        // Get the lightbox and images
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        // Variables for drag functionality
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
+        let scale = 1;
+        
+        // Get all project images
+        const projectImages = document.querySelectorAll('.image-1 img, .image-2 img');
+        
+        // Add click event to each image
+        projectImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.style.display = 'block';
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                
+                // Reset transformations
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.cursor = 'zoom-in';
+            });
+        });
+        
+        // Close lightbox
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+        
+        // Close when clicking outside image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+        
+        // Zoom functionality
+        lightboxImg.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) return;
+            
+            e.stopPropagation();
+            
+            if (scale === 1) {
+                // Zoom in
+                scale = 1.5;
+                lightboxImg.classList.add('zoomed');
+                lightboxImg.style.cursor = 'grab';
+            } else {
+                // Zoom out
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.cursor = 'zoom-in';
+            }
+            updateTransform();
+        });
+        
+        // Drag functionality for zoomed image
+        lightboxImg.addEventListener('mousedown', function(e) {
+            if (scale === 1) return;
+            
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            lightboxImg.style.cursor = 'grabbing';
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+        
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            if (scale > 1) {
+                lightboxImg.style.cursor = 'grab';
+            }
+        });
+        
+        // Update image transform
+        function updateTransform() {
+            lightboxImg.style.transform = `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+        
+        // Close with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

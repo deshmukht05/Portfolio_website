@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="stylesheet" href="recent_style.css">
+    <link rel="icon" type="image/x-icon" href="assests/Logo.png">
+    <title>Tushar Portfolio/Bajaoo Project</title>
+</head>
+<body>
+    <!---------------------- Navbar ---------------------------->
+    <nav>
+        <label class="logo">
+            <img src="assests/Profile.JPG" alt="" class="profile">
+            <a href="index.html">Tushar<span>.</span></a>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Designs</a></li>
+            <li><a href="index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!------------------- Recent Project-1 ---------------------->
+    <div class="container">
+        <div class="sub-heading">
+            <p>Project Details</p>
+        </div>
+
+        <div class="heading">
+            <h1>Bajaoo Application Design🎧</h1>
+            <p>An intuitive, mobile-friendly design for an Android app focused on enhancing user productivity <br>through sleek interfaces and seamless interactions.</p>
+        </div>
+
+        <div class="image-1">
+            <img src="assests/Recent_Projects/Recent_Project_2_Images/recent_bajaoo_project_img_1.jpg" alt="recent_project_img_1">
+        </div>
+        <div class="image-2">
+            <img src="assests/Recent_Projects/Recent_Project_2_Images/recent_bajaoo_project_img_2.jpg" alt="recent_project_img_2">
+        </div>
+        
+        <div class="overview">
+            <h2>Overview</h2>
+            <p>Bajaoo is a user-friendly e-commerce app designed for buying and selling musical instruments. My Figma UI design covers the complete user journey, from the Login/Signup page to the Payment Gateway, ensuring a seamless shopping experience. The design appears to focus on clean aesthetics, intuitive navigation, and smooth checkout flow, catering to musicians and music enthusiasts.
+            </p>
+        </div>
+
+        <div class="key_features">
+            <h2>Key Featuers</h2>
+            <ul class="features">
+                <li><b>Authentication & Onboarding:</b></li>
+                - <b>Login/Signup Page:</b> Clean and minimal design with email/phone and social login options. <br>
+                - <b>OTP Verification:</b> Secure and fast authentication flow. <br>
+                - <b>Welcome/Onboarding Screens:</b> Introduces app features for new users. <br>
+                
+                <li><b>Home & Product Discovery:</b></li>
+                - <b>Search Bar: </b>Allows users to quickly find instruments. <br>
+                - <b>Categories Section: </b>Organized by instrument types (Guitars, Pianos, Drums, etc.). <br>
+                - <b>Featured Products & Deals: </b>Highlighted with attractive banners. <br>
+                - <b>Trending & Recommendations: </b>Personalized suggestions based on user preferences. <br>
+
+                <li><b>Product Pages:</b></li>
+                - <b>High-Quality Images & Zoom Feature: </b>Lets users inspect instruments closely. <br>
+                - <b>Detailed Specifications: </b>Includes brand, model, material, and technical details. <br>
+                - <b>Customer Reviews & Ratings: </b>Builds trust and helps in decision-making. <br>
+                - <b>"Add to Cart" & "Buy Now" Buttons: </b>Clear CTAs for quick purchases. <br>
+
+                <li><b>Cart & Checkout Flow:</b></li>
+                - <b>Cart Summary: </b>Displays selected items, prices, and total cost. <br>
+                - <b>Coupon/Discount Field: </b>Encourages users to apply promo codes. <br>
+                - <b>Shipping & Delivery Options: </b>Multiple choices (express, standard). <br>
+                - <b>Secure Payment Gateway: </b>Supports UPI, Cards, Net Banking, and Wallet payments. <br>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <!-------------- Footer Design ------------------>
+    <footer class="footer-design">
+        <div class="center-text">#Designed By Tushar Deshmukh @2025</div>
+    </footer>
+
+    <!------------------- Lightbox/Popup ---------------------->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="caption"></div>
+    </div>
+
+    <script>
+        // Get the lightbox and images
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        // Variables for drag functionality
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
+        let scale = 1;
+        
+        // Get all project images
+        const projectImages = document.querySelectorAll('.image-1 img, .image-2 img');
+        
+        // Add click event to each image
+        projectImages.forEach(img => {
+            img.addEventListener('click', function() {
+                lightbox.style.display = 'block';
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+                
+                // Reset transformations
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.cursor = 'zoom-in';
+            });
+        });
+        
+        // Close lightbox
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+        
+        // Close when clicking outside image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+        
+        // Zoom functionality
+        lightboxImg.addEventListener('click', function(e) {
+            if (e.target !== lightboxImg) return;
+            
+            e.stopPropagation();
+            
+            if (scale === 1) {
+                // Zoom in
+                scale = 1.5;
+                lightboxImg.classList.add('zoomed');
+                lightboxImg.style.cursor = 'grab';
+            } else {
+                // Zoom out
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                lightboxImg.classList.remove('zoomed');
+                lightboxImg.style.cursor = 'zoom-in';
+            }
+            updateTransform();
+        });
+        
+        // Drag functionality for zoomed image
+        lightboxImg.addEventListener('mousedown', function(e) {
+            if (scale === 1) return;
+            
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            lightboxImg.style.cursor = 'grabbing';
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+            
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+        
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+            if (scale > 1) {
+                lightboxImg.style.cursor = 'grab';
+            }
+        });
+        
+        // Update image transform
+        function updateTransform() {
+            lightboxImg.style.transform = `translate(-50%, -50%) translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+        
+        // Close with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

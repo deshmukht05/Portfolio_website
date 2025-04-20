@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="graphics_style.css">
+    <link rel="icon" type="image/x-icon" href="assests/Logo.png">
+    <title>Tushar Portfolio/Graphic Designs</title>
+</head>
+<body>
+    <!---------------------- Navbar ---------------------------->
+    <nav>
+        <label class="logo">
+            <img src="assests/Profile.JPG" alt="" class="profile">
+            <a href="index.html">Tushar<span>.</span></a>
+        </label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">About</a></li>
+            <li><a href="index.html">Designs</a></li>
+            <li><a href="index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!--------------------- Graphic Designs ----------------------->
+    <div class="container">
+        <!-- Sub-Heading -->
+        <div class="sub-heading">
+            <p>Find Best Designs</p>
+        </div>
+
+        <!-- Heading -->
+        <div class="heading">
+            <h1>My <span>{Graphics}</span> Work</h1>
+            <p>"A visual journey of my creative evolution"</p>
+        </div>
+
+        <!-- Graphic Designs -->
+        <div class="graphic-designs">
+            <img class="gd-1" src="assests/Graphics Work/001.jpg" alt="">
+            <img class="gd-1" src="assests/Graphics Work/002.jpg" alt="">
+            <img class="gd-1" src="assests/Graphics Work/003.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/004.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/005.jpg" alt="">
+            <img class="gd-1" src="assests/Graphics Work/006.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/007.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/008.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/009.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/010.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/011.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/012.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/013.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/014.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/015.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/016.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/017.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/018.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/019.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/020.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/021.png" alt="">
+
+            <img class="gd-1" src="assests/Graphics Work/022.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/023.png" alt="">
+            <img class="gd-1" src="assests/Graphics Work/024.png" alt="">
+        </div>
+
+    </div>
+
+
+    <!-------------- Footer Design ------------------>
+    <footer class="footer-design">
+        <div class="center-text">#Designed By Tushar Deshmukh @2025</div>
+    </footer>
+
+    <!------------------- Lightbox/Popup ---------------------->
+    <div id="lightbox" class="lightbox">
+        <button class="close-btn">&times;</button>
+        <div class="image-container">
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+        <button class="download-btn">Download Image</button>
+    </div>
+
+    <!-------------------- JavaScript Code -------------------->
+    <script>
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close-btn');
+        const downloadBtn = document.querySelector('.download-btn');
+
+        let currentImageSrc = '';
+
+        // Get all project images
+        const projectImages = document.querySelectorAll('.graphic-designs img');
+
+        // Add click event to each image
+        projectImages.forEach(img => {
+            img.addEventListener('click', function() {
+                currentImageSrc = this.src;
+                lightbox.style.display = 'flex';
+                lightboxImg.src = this.src;
+                lightboxImg.alt = this.alt;
+            });
+        });
+
+        // Close lightbox
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+
+        // Close when clicking outside image
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+        // Download functionality
+        downloadBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!currentImageSrc) return;
+            
+            const fileName = currentImageSrc.split('/').pop();
+            const link = document.createElement('a');
+            link.href = currentImageSrc;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        // Close with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>

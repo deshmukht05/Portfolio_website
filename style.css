@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    background: #101018;
+}
+
+/*----------- Navbar ------------*/
+
+nav{
+    /* border: 2px solid #000; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures the logo and navigation items are spaced properly */
+    /* padding: 0 100px; */
+    height: auto;
+    width: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #15151f;
+    position: relative;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+ul li {
+    margin: 0 20px;
+}
+
+ul, li a{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    display: inline-flex;
+    color: white;
+}
+
+label.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Inter';
+    cursor: pointer;
+    background-color: #15151f;
+}
+
+label.logo a{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    background-color: #15151f;
+    font-weight: 600;
+}
+
+label.logo .profile{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+label span{
+    color: #00DC10;
+    background-color: #15151f;
+}
+nav ul{
+    float: right;
+    margin-right: 100px;
+    background-color: #15151f;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 20px;
+}
+
+nav ul li a{
+    background-color: #15151f;
+    font-weight: 500;
+}
+
+a:hover{
+    color: #00DC10;
+    transition: .4s;
+}
+
+/*----------- Home Page ------------*/
+
+.head-container{
+    max-width: auto;
+    margin-top: 80px;
+}
+
+.sub-heading{
+    color: #00DC10;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Inter';
+    line-height: 100%;
+    padding-left: 100px;
+}
+
+.main-heading{
+    padding-top: 4px;
+    color: white;
+    /* padding-left: 100px; */
+    font-weight: 700;
+    font-size: 92px;
+    font-family: 'Inter';
+}
+
+.heading{
+    margin-top: 16px;
+    padding: 10px 5px 10px 5px;
+    border: 2px solid #727272;
+    margin-left: 88px;
+    width: 1050px;
+}
+
+.main-heading span{
+    color: #727272;
+    font-weight: 100;
+}
+
+.description{
+    padding-top: 16px;
+    color: #727272;
+    padding-left: 100px;
+    font-weight: 400;
+    font-family: 'Poppins';
+    font-size: 16px;
+    width: 800px;
+}
+
+.resume-btn {
+    margin-left: 100px;
+    margin-top: 42px;
+    background-color: #00DC10;
+    padding: 10px;
+    width: 16rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; /* Optional rounded corners */
+    cursor: pointer;
+}
+
+.resume-btn p {
+    margin: 0; /* Remove extra spacing */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    background-color: transparent; /* Keep this consistent */
+}
+
+.resume-btn p a {
+    color: #101018;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    background-color: #00DC10;
+}
+
+.fi-br-download {
+    font-size: 20px; /* Adjust icon size */
+    color: #101018; /* Match icon color to text */
+    background-color: #00DC10;
+}
+
+.work-exp{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-top: 22px;
+    font-family: 'Inter';
+    font-weight: 600;
+    /* border: 2px solid #fff; */
+}
+
+.year-exp{
+    text-align: left;
+    padding-left: 100px;
+    color: white;
+    font-size: 62px;
+}
+
+.icons{
+    text-align: right;
+    padding-right: 100px;
+    font-size: 62px;
+    color: #727272;
+}
+
+.icons .tools{
+    font-size: 16px;
+    margin-bottom: -20px;
+    padding-left: 100px;
+}
+
+.fi-brands-photoshop{
+    color: #727272;
+    font-size: 32px;
+}
+
+.fi-brands-photoshop:hover{
+    color: white;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.fi-brands-figma{
+    color: #727272;
+    font-size: 32px;
+}
+
+.fi-brands-figma:hover{
+    color: white;
+    transform: .4s;
+    cursor: pointer;
+}
+
+.fi-brands-visual-basic{
+    color: #727272;
+    font-size: 32px;
+}
+
+.fi-brands-visual-basic:hover{
+    color: white;
+    transform: .4s;
+    cursor: pointer;
+}
+
+/*---------- About Me -------------*/
+.about-container{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Inter';
+    /* border: 1px solid white; */
+}
+
+.about-container h2{
+    color: white;
+    text-align: center;
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.about-container h2 span{
+    color: #00DC10;
+}
+
+.about-container p{
+    margin-top: 5px;
+    color: #727272;
+    text-align: center;
+    font-size: 14px;
+}
+
+.about-container .about-description{
+    /* border: 1px solid white; */
+    margin-top: 30px;
+    margin-left: 50%;
+    font-family: 'Inter';
+    font-size: 16px;
+    text-align: left;
+    color: #727272;
+}
+
+/* Social Icons */
+.social-icons{
+    margin-left: 50%;
+    margin-top: 24px;
+    color: #727272;
+    display: flex;
+    gap: 10px;
+}
+
+.fi-brands-linkedin{
+    font-size: 26px;
+    gap: 10px;
+}
+
+.fi-brands-instagram{
+    font-size: 26px;
+    gap: 10px;
+}
+
+.fi-brands-github{
+    font-size: 26px;
+    gap: 10px;
+}
+
+.fi-brands-pinterest{
+    font-size: 26px;
+    gap: 10px;
+}
+
+/* Scrolling Text */
+
+.fixed-box {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    transform: translateY(-50%);
+    width: auto;
+    height: 30px;
+    overflow: hidden; 
+    background: #15151f;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Inter';
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* Remove the border-image properties */
+}
+
+/* Add fade effect on sides */
+.fixed-box::before,
+.fixed-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+    background-color: #15151f;
+}
+
+.fixed-box::before {
+    left: 0;
+    background: linear-gradient(90deg, #15151f 0%, rgba(21, 21, 31, 0) 100%);
+}
+
+.fixed-box::after {
+    right: 0;
+    background: linear-gradient(270deg, #15151f 0%, rgba(21, 21, 31, 0) 100%);
+}
+
+.marquee-container {
+    display: flex;
+    width: fit-content;
+}
+
+.marquee {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    animation: marquee 20s linear infinite;
+    background-color: #15151f;
+    padding-right: 20px; /* spacing between copies */
+}
+
+.marquee span {
+    padding: 0 20px; /* Spacing between items */
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #15151f;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/*----------- Designs ------------*/
+.designs-container{
+    margin-top: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-family: 'Inter';
+}
+
+.designs-container h2{
+    color: white;
+    text-align: center;
+    font-size: 52px;
+    font-weight: 600;
+}
+
+.designs-container p{
+    margin-top: 5px;
+    color: #727272;
+    text-align: center;
+    font-size: 14px;
+}
+
+.designs-container h2 span{
+    color: #00DC10;
+}
+
+.designs-container .recent-work h4{
+    margin-top: 50px;
+    color: #00DC10;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.designs-container .recent-work h1{
+    color: white;
+    font-size: 52px;
+    font-weight: 600;
+}
+
+/* Recent Projects */
+.recent-work {
+    padding: 40px 0;
+}
+
+.recent-work h4 {
+    color: #5b5b5b;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.recent-work h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Projects Grid */
+.recent-projects {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Project Link Wrapper */
+.project-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Container */
+.project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* Project Card */
+.project-card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid #5b5b5b;
+}
+
+.project-link:hover .project-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Images */
+.project-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease;
+}
+
+.default-image {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hover-image {
+    opacity: 0;
+    z-index: 2;
+}
+
+.project-card:hover .default-image {
+    opacity: 0;
+}
+
+.project-card:hover .hover-image {
+    opacity: 0.6;
+}
+
+/* Project Info (Title + Year) */
+.project-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.project-year {
+    margin: 0;
+    font-size: 1rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover .project-title {
+    color: #ffffff;
+}
+
+.project-link:hover .project-year {
+    color: #ffffff;
+}
+
+/* Technical Work */
+.technical-work {
+    padding: 40px 0;
+}
+
+.technical-work h4 {
+    color: #00DC10;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.technical-work h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.technical-projects {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+/* Graphic Work */
+.graphic-work {
+    padding: 40px 0;
+}
+
+.graphic-work h4 {
+    color: #00DC10;
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.graphic-work h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+.graphic-work .graphic-designs{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.graphic-designs{
+    overflow: hidden;
+    display: flex;
+    gap: auto;
+}
+
+.graphic-work .graphic-designs .gd-1{
+    border: 3px solid #a0a0a0;
+    position: relative;
+    width: 410px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.graphic-work .graphic-designs img:hover{
+    transition: 0.5 ease-in;
+    opacity: 0.8;
+}
+
+.graphic-work .graphic-designs a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.graphic-work .graphic-designs a:hover{
+    color: #00DC10;
+}
+
+/* Footer */
+.footer-design{
+    margin-top: 30px;
+    /* border: 2px solid #727272; */
+    box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.2);
+    background-color: #727272;
+    position: relative;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Inter';
+}
+
+.footer-design .center-text{
+    padding: 20px 0 20px 0;
+    color: #727272;
+    background-color: #1f1f2d;
+}
+
+.footer-design .center-text b{
+    font-style: italic;
+    color: #727272;
+    background-color: #1f1f2d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .recent-projects {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        height: 350px;
+    }
+    
+    .recent-work h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        height: 300px;
+    }
+}
