@@ -125,7 +125,7 @@ a:hover{
     padding: 10px 5px 10px 5px;
     border: 2px solid #727272;
     margin-left: 88px;
-    width: 1050px;
+    width: fit-content;
 }
 
 .main-heading span{
