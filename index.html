@@ -13,7 +13,7 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="assests/Logo.webp">
-    <title>Tushar Portfolio</title>
+    <title>Local-Tushar Portfolio</title>
 </head>
 <body>
     <!---------------------- Navbar ---------------------------->
@@ -28,6 +28,9 @@
             <li><a href="#technical-work">Technical Work</a></li>
             <li><a href="#designs">Designs</a></li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fi fi-br-menu-burger"></i> <!-- Or any menu icon you prefer -->
+        </div>
     </nav>
 
     <!---------------------- Home Page ------------------------>
@@ -41,7 +44,10 @@
 
         <!-- Resume Download Button -->
         <div class="resume-btn">
-            <p><i class="fi fi-br-download"></i> <a href="">Download Resume</a></p>
+            <p>
+                <i class="fi fi-br-download"></i> 
+                <a href="Tushar Deshmukh Resume.pdf" download="Tushar Deshmukh Resume.pdf">Download Resume</a>
+            </p>
         </div>
     </div>
 
@@ -219,4 +225,36 @@
     </footer>
 
 </body>
+
+
+<script>
+    // document.getElementById('mobile-menu').addEventListener('click', function() {
+    //     document.querySelector('nav ul').classList.toggle('show');
+    // });
+
+    // Mobile menu functionality
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    
+    // Toggle menu visibility
+    mobileMenu.addEventListener('click', function() {
+        document.querySelector('nav ul').classList.toggle('show');
+    });
+    
+    // Close menu when any link is clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.remove('show');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const nav = document.querySelector('nav');
+        if (!nav.contains(event.target)) {
+            document.querySelector('nav ul').classList.remove('show');
+        }
+    });
+
+</script>
 </html>

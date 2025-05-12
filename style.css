@@ -1,51 +1,70 @@
+/* ==================== */
+/* BASE STYLES */
+/* ==================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     background: #101018;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 /*----------- Navbar ------------*/
 
-nav{
-    /* border: 2px solid #000; */
+nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures the logo and navigation items are spaced properly */
-    /* padding: 0 100px; */
-    height: auto;
-    width: auto;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     background-color: #15151f;
     position: relative;
+    padding: 0 5%;
+}
+
+.menu-toggle {
+    display: none;
+    background-color: #15151f;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
 }
 
 ul {
     display: flex;
     list-style: none;
+    background-color: #15151f;
 }
 
 ul li {
     margin: 0 20px;
 }
 
-ul, li a{
+ul, li a {
     text-decoration: none;
     list-style: none;
-    box-sizing: border-box;
     font-family: 'Inter';
-    display: inline-flex;
     color: white;
+    background-color: #15151f;
+    font-weight: 500;
 }
 
-label.logo{
+label.logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    line-height: 80px;
-    padding: 0 100px;
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -54,280 +73,218 @@ label.logo{
     background-color: #15151f;
 }
 
-label.logo a{
+label.logo a {
     text-decoration: none;
-    list-style: none;
     color: white;
     background-color: #15151f;
     font-weight: 600;
 }
 
-label.logo .profile{
+label.logo .profile {
     width: 42px;
     height: 42px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-label span{
+label span {
     color: #00DC10;
     background-color: #15151f;
 }
-nav ul{
-    float: right;
-    margin-right: 100px;
-    background-color: #15151f;
-}
 
-nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 20px;
-}
-
-nav ul li a{
-    background-color: #15151f;
-    font-weight: 500;
-}
-
-a:hover{
+a:hover {
     color: #00DC10;
     transition: .4s;
 }
 
 /*----------- Home Page ------------*/
 
-.head-container{
-    max-width: auto;
+.head-container {
+    max-width: 100%;
     margin-top: 80px;
+    padding: 0 5%;
 }
 
-.sub-heading{
+.sub-heading {
     color: #00DC10;
     font-size: 30px;
     font-weight: 600;
-    font-family: 'Inter';
     line-height: 100%;
-    padding-left: 100px;
+    margin-bottom: 20px;
 }
 
-.main-heading{
-    padding-top: 4px;
+.main-heading {
     color: white;
     font-weight: 700;
     font-size: 92px;
-    font-family: 'Inter';
+    line-height: 1;
 }
 
-.heading{
+.heading {
     margin-top: 16px;
-    padding: 10px 5px 10px 5px;
+    padding: 10px 5px;
     border: 2px solid #727272;
-    margin-left: 88px;
     width: fit-content;
 }
 
-.main-heading span{
+.main-heading span {
     color: #727272;
     font-weight: 100;
 }
 
-.description{
-    padding-top: 16px;
+.description {
+    margin-top: 16px;
     color: #727272;
-    padding-left: 100px;
     font-weight: 400;
     font-family: 'Poppins';
     font-size: 16px;
-    width: 800px;
+    max-width: 800px;
+    line-height: 1.6;
 }
 
 .resume-btn {
-    margin-left: 100px;
     margin-top: 42px;
     background-color: #00DC10;
-    padding: 10px;
+    padding: 1.4rem;
     width: 16rem;
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px; /* Optional rounded corners */
+    border-radius: 5px;
     cursor: pointer;
 }
 
 .resume-btn p {
-    margin: 0; /* Remove extra spacing */
+    margin: 0;
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between icon and text */
-    background-color: transparent; /* Keep this consistent */
+    gap: 10px;
+    background-color: transparent;
 }
 
 .resume-btn p a {
     color: #101018;
     text-decoration: none;
     font-size: 20px;
-    font-family: 'Inter', sans-serif;
     font-weight: 500;
     background-color: #00DC10;
 }
 
 .fi-br-download {
-    font-size: 20px; /* Adjust icon size */
-    color: #101018; /* Match icon color to text */
+    font-size: 20px;
+    color: #101018;
     background-color: #00DC10;
 }
 
-.work-exp{
+.work-exp {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     margin-top: 22px;
-    font-family: 'Inter';
     font-weight: 600;
-    /* border: 2px solid #fff; */
+    padding: 0 5%;
 }
 
-.year-exp{
+.year-exp {
     text-align: left;
-    padding-left: 100px;
     color: white;
     font-size: 62px;
+    line-height: 1.2;
 }
 
-.icons{
+.icons {
     text-align: right;
-    padding-right: 100px;
     font-size: 62px;
     color: #727272;
 }
 
-.icons .tools{
+.icons .tools {
     font-size: 16px;
     margin-bottom: -20px;
-    padding-left: 100px;
 }
 
-.fi-brands-photoshop{
+.fi-brands-photoshop,
+.fi-brands-figma,
+.fi-brands-visual-basic {
     color: #727272;
     font-size: 32px;
+    margin-left: 15px;
+    transition: color 0.4s;
 }
 
-.fi-brands-photoshop:hover{
+.fi-brands-photoshop:hover,
+.fi-brands-figma:hover,
+.fi-brands-visual-basic:hover {
     color: white;
-    transition: .4s;
-    cursor: pointer;
-}
-
-.fi-brands-figma{
-    color: #727272;
-    font-size: 32px;
-}
-
-.fi-brands-figma:hover{
-    color: white;
-    transform: .4s;
-    cursor: pointer;
-}
-
-.fi-brands-visual-basic{
-    color: #727272;
-    font-size: 32px;
-}
-
-.fi-brands-visual-basic:hover{
-    color: white;
-    transform: .4s;
     cursor: pointer;
 }
 
 /*---------- About Me -------------*/
-.about-container{
-    margin-top: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-    font-family: 'Inter';
-    /* border: 1px solid white; */
+.about-container {
+    margin-top: 80px;
+    padding: 0 5%;
 }
 
-.about-container h2{
+.about-container h2 {
     color: white;
     text-align: center;
     font-size: 52px;
     font-weight: 600;
 }
 
-.about-container h2 span{
+.about-container h2 span {
     color: #00DC10;
 }
 
-.about-container p{
+.about-container p {
     margin-top: 5px;
     color: #727272;
     text-align: center;
     font-size: 14px;
 }
 
-.about-container .about-description{
-    /* border: 1px solid white; */
+.about-container .about-description {
     margin-top: 30px;
-    margin-left: 50%;
-    font-family: 'Inter';
     font-size: 16px;
-    text-align: left;
     color: #727272;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Social Icons */
-.social-icons{
-    margin-left: 50%;
+.social-icons {
     margin-top: 24px;
     color: #727272;
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    justify-content: center;
 }
 
-.fi-brands-linkedin{
+.social-icons i {
     font-size: 26px;
-    gap: 10px;
+    transition: color 0.4s;
 }
 
-.fi-brands-instagram{
-    font-size: 26px;
-    gap: 10px;
-}
-
-.fi-brands-github{
-    font-size: 26px;
-    gap: 10px;
-}
-
-.fi-brands-pinterest{
-    font-size: 26px;
-    gap: 10px;
+.social-icons i:hover {
+    color: #00DC10;
+    cursor: pointer;
 }
 
 /* Scrolling Text */
-
 .fixed-box {
     margin-top: 50px;
-    margin-left: 100px;
-    margin-right: 100px;
-    transform: translateY(-50%);
-    width: auto;
-    height: 30px;
-    overflow: hidden; 
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
     background: #15151f;
     border-radius: 5px;
-    padding: 10px;
-    font-family: 'Inter';
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     position: relative;
-    /* Remove the border-image properties */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Add fade effect on sides */
 .fixed-box::before,
 .fixed-box::after {
     content: '';
@@ -337,7 +294,6 @@ a:hover{
     width: 100px;
     z-index: 2;
     pointer-events: none;
-    background-color: #15151f;
 }
 
 .fixed-box::before {
@@ -361,11 +317,11 @@ a:hover{
     align-items: center;
     animation: marquee 20s linear infinite;
     background-color: #15151f;
-    padding-right: 20px; /* spacing between copies */
+    padding-right: 20px;
 }
 
 .marquee span {
-    padding: 0 20px; /* Spacing between items */
+    padding: 10px 20px;
     color: white;
     font-size: 18px;
     font-weight: 500;
@@ -383,70 +339,58 @@ a:hover{
 }
 
 /*----------- Designs ------------*/
-.designs-container{
-    margin-top: 60px;
-    margin-left: 100px;
-    margin-right: 100px;
-    font-family: 'Inter';
+.designs-container {
+    margin-top: 80px;
+    padding: 0 5%;
 }
 
-.designs-container h2{
+.designs-container h2 {
     color: white;
     text-align: center;
     font-size: 52px;
     font-weight: 600;
 }
 
-.designs-container p{
+.designs-container p {
     margin-top: 5px;
     color: #727272;
     text-align: center;
     font-size: 14px;
 }
 
-.designs-container h2 span{
+.designs-container h2 span {
     color: #00DC10;
 }
 
-.designs-container .recent-work h4{
-    margin-top: 50px;
-    color: #00DC10;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.designs-container .recent-work h1{
-    color: white;
-    font-size: 52px;
-    font-weight: 600;
-}
-
-/* Recent Projects */
+/* Recent Work Section */
 .recent-work {
     padding: 40px 0;
 }
 
-.recent-work h4 {
-    color: #5b5b5b;
+.recent-work h4, .technical-work h4 {
+    color: #00DC10;
     font-size: 20px;
     margin-bottom: 5px;
+    font-weight: 500;
 }
 
 .recent-work h1 {
     color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 30px;
+    line-height: 1.2;
 }
 
 /* Projects Grid */
-.recent-projects {
+.recent-projects,
+.technical-projects {
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
 }
 
-/* Project Link Wrapper */
+/* Project Card */
 .project-link {
     text-decoration: none;
     display: block;
@@ -458,15 +402,12 @@ a:hover{
     transform: translateY(-5px);
 }
 
-/* Project Container */
 .project-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    cursor: pointer;
 }
 
-/* Project Card */
 .project-card {
     position: relative;
     width: 100%;
@@ -478,11 +419,6 @@ a:hover{
     border: 3px solid #5b5b5b;
 }
 
-.project-link:hover .project-card {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Project Images */
 .project-image {
     position: absolute;
     width: 100%;
@@ -510,7 +446,7 @@ a:hover{
     opacity: 0.6;
 }
 
-/* Project Info (Title + Year) */
+/* Project Info */
 .project-info {
     display: flex;
     justify-content: space-between;
@@ -534,40 +470,12 @@ a:hover{
     transition: color 0.3s ease;
 }
 
-.project-link:hover .project-title {
-    color: #ffffff;
-}
-
+.project-link:hover .project-title,
 .project-link:hover .project-year {
     color: #ffffff;
 }
 
-/* Technical Work */
-.technical-work {
-    padding: 40px 0;
-}
-
-.technical-work h4 {
-    color: #00DC10;
-    font-size: 20px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-.technical-work h1 {
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-.technical-projects {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-}
-
-/* Graphic Work */
+/* Graphic Work Section */
 .graphic-work {
     padding: 40px 0;
 }
@@ -583,91 +491,382 @@ a:hover{
     color: #ffffff;
     font-size: 2.5rem;
     margin-bottom: 30px;
+    line-height: 1.2;
 }
 
-.graphic-work .graphic-designs{
+.graphic-designs {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 20px;
+    width: 100%;
 }
 
-.graphic-designs{
-    overflow: hidden;
-    display: flex;
-    gap: auto;
-}
-
-.graphic-work .graphic-designs .gd-1{
+.graphic-designs .gd-1 {
+    width: 100%;
+    height: auto !important; /* Changed from fixed height */
+    min-height: 300px; /* Minimum height */
+    object-fit: contain; /* Changed from cover to contain */
     border: 3px solid #a0a0a0;
-    position: relative;
-    width: 410px;
-    height: 400px;
     border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #15151f; /* Added background for contain mode */
 }
 
-.graphic-work .graphic-designs img:hover{
-    transition: 0.5 ease-in;
+.graphic-designs a.gd-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 20px;
+    text-align: center;
+}
+
+.gd-1:hover {
     opacity: 0.8;
+    transform: scale(1.02);
 }
 
-.graphic-work .graphic-designs a{
+.graphic-designs a {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     text-decoration: none;
     color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    border: 3px solid #a0a0a0;
+    border-radius: 10px;
+    background-color: rgba(16, 16, 24, 0.7);
 }
 
-.graphic-work .graphic-designs a:hover{
+.graphic-designs a:hover {
     color: #00DC10;
+    background-color: rgba(16, 16, 24, 0.9);
 }
 
 /* Footer */
-.footer-design{
+.footer-design {
     margin-top: 30px;
-    /* border: 2px solid #727272; */
     box-shadow: 0 8px 4px 0 rgba(0, 0, 0, 0.2);
-    background-color: #727272;
-    position: relative;
+    background-color: #1f1f2d;
     text-align: center;
     font-size: 16px;
-    font-family: 'Inter';
 }
 
-.footer-design .center-text{
-    padding: 20px 0 20px 0;
+.center-text {
+    padding: 20px 0;
     color: #727272;
     background-color: #1f1f2d;
 }
 
-.footer-design .center-text b{
+.center-text b {
     font-style: italic;
-    color: #727272;
-    background-color: #1f1f2d;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .recent-projects {
-        grid-template-columns: 1fr;
+/* responsive.css - Mobile-First Responsive Styles */
+
+/* Base Responsive Styles */
+@media (max-width: 1200px) {
+    .main-heading {
+        font-size: 72px;
     }
     
-    .project-card {
-        height: 350px;
+    .about-description {
+        padding: 0 5%;
+    }
+}
+
+/* Tablet and Small Desktop Styles */
+@media (max-width: 992px) {
+    .main-heading {
+        font-size: 60px;
     }
     
-    .recent-work h1 {
+    .year-exp, .icons {
+        font-size: 48px;
+    }
+
+    .year-exp p{
+        text-align: center;
+    }
+    
+    .about-container h2,
+    .designs-container h2 {
+        font-size: 42px;
+    }
+
+    .recent-work h4,
+    .technical-work h4,
+    .graphic-work h4 {
+        font-size: 1rem;
+    }
+    
+    .recent-work h1,
+    .technical-work h1,
+    .graphic-work h1 {
         font-size: 2rem;
     }
+
+    .graphic-designs {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-@media (max-width: 480px) {
-    .project-card {
+/* Mobile Menu and Tablet Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Only show toggle button on mobile */
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #15151f;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s ease;
+        flex-direction: column;
+        padding: 20px 0;
+        z-index: 999;
+        margin: 0;
+    }
+
+    nav ul.show {
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        list-style: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 20px;
+        color: white !important;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+        color: #00DC10 !important;
+        background-color: transparent !important;
+    }
+    
+    /* Desktop menu items - hide in mobile */
+    /* nav ul {
+        display: none;
+    }
+    
+    nav ul.show {
+        display: flex;
+    } */
+
+    /* Typography Adjustments */
+    .main-heading {
+        font-size: 48px;
+    }
+    
+    .sub-heading {
+        font-size: 24px;
+    }
+
+    /* Layout Adjustments */
+    .head-container,
+    .work-exp,
+    .about-container,
+    .designs-container {
+        text-align: center;
+        align-items: center;
+    }
+
+    .heading {
+        margin: 16px auto 0;
+    }
+
+    .description {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Work Experience Grid */
+    .work-exp {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .year-exp p{
+        text-align: center;
+    }
+    
+    .icons {
+        text-align: center;
+        font-size: 36px;
+    }
+    
+    .icons .tools {
+        margin-bottom: 10px;
+    }
+
+    /* Project Cards */
+    .project-card,
+    .gd-1 {
+        height: 350px;
+    }
+
+    /* Graphics Grid */
+    .graphic-designs {
+        grid-template-columns: 1fr;
+    }
+
+    /* About Section */
+    .about-description {
+        text-align: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .graphic-designs .gd-1 {
+        min-height: 250px;
+    }
+}
+
+/* Desktop menu - always visible on larger screens */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex !important; /* Force show on desktop */
+    }
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 576px) {
+    /* Typography */
+    .main-heading {
+        font-size: 36px;
+    }
+
+    .year-exp {
+        text-align: center;
+    }
+    
+    .about-container h2,
+    .designs-container h2 {
+        font-size: 32px;
+    }
+    
+    .recent-work h1,
+    .technical-work h1,
+    .graphic-work h1 {
+        font-size: 1.8rem;
+    }
+
+    .recent-work h4,
+    .technical-work h4,
+    .graphic-work h4 {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* Download Button */
+    .resume-btn {
+        align-self: center;
+        margin: 42px auto;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Project Grids */
+    .recent-projects,
+    .technical-projects {
+        grid-template-columns: 1fr;
+    }
+
+    /* Image Cards */
+    .project-card,
+    .gd-1 {
         height: 300px;
     }
+
+    /* See More Link */
+    .graphic-designs {
+        grid-template-columns: 1fr;
+    }
+    .graphic-designs .gd-1 {
+        min-height: 350px;
+    }
+    
+    .graphic-designs a.gd-1 {
+        height: 100px;
+        min-height: unset;
+    }
+}
+
+/* Specific Fixes for Issues Mentioned */
+
+/* Technical Work Heading Color Fix */
+.technical-work h1,
+.technical-work h4 {
+    color: white !important;
+    background: transparent !important;
+}
+
+.technical-work h4 {
+    color: #00DC10 !important;
+}
+
+/* Graphics Work Images Fix */
+.graphic-designs .gd-1 {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* See More Link Styling */
+.graphic-designs a.gd-1 {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: rgba(16, 16, 24, 0.7) !important;
+    border: 3px solid #a0a0a0 !important;
+}
+
+.graphic-designs a.gd-1:hover {
+    background-color: rgba(0, 220, 16, 0.1) !important;
+    border-color: #00DC10 !important;
+    color: #00DC10 !important;
+}
+
+/* Project Card Text Background Fix */
+.project-title,
+.project-year {
+    background: transparent !important;
+}
+
+/* Center Alignment for Download Button and Year Exp */
+.head-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.work-exp {
+    width: 100%;
+    padding: 0 5%;
+}
+
+.year-exp {
+    text-align: left;
+    margin-bottom: 20px;
 }
