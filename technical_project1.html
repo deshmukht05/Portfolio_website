@@ -6,11 +6,6 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
     <link rel="stylesheet" href="technical_style.css">
     <link rel="icon" type="image/x-icon" href="assests/Logo.webp">
     <title>Tushar Portfolio/Subjective Ans Evaluation</title>
@@ -28,9 +23,12 @@
             <li><a href="index.html">Designs</a></li>
             <li><a href="index.html">Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fi fi-br-menu-burger"></i> <!-- Or any menu icon you prefer -->
+        </div>
     </nav>
 
-    <!------------------- Recent Project-1 ---------------------->
+    <!------------------- Technical Project-1 ---------------------->
     <div class="container">
         <div class="sub-heading">
             <p>Project Details</p>
@@ -44,9 +42,6 @@
         <div class="image-1">
             <img src="assests/Technical_Project/Technical_project_1/technical_project_img_1.webp" alt="recent_project_img_1">
         </div>
-        <!-- <div class="image-2">
-            <img src="assests/Recent_Projects/Recent_Project_1_Images/recent_music_project_img_2.jpg" alt="recent_project_img_2">
-        </div> -->
         
         <div class="overview">
             <h2>Overview</h2>
@@ -57,28 +52,44 @@
         <div class="key_features">
             <h2>Key Featuers</h2>
             <ul class="features">
-                <li><b>Excel-Based Answer Database:</b></li>
+                <li>
+                    <b>Excel-Based Answer Database:</b>
+                </li>
                 Teachers can store questions, model answers, keywords, and marks in a structured Excel format.
 
-                <li><b>OCR Integration:</b></li>
+                <li>
+                    <b>OCR Integration:</b>
+                </li>
                 Extracts text from scanned/handwritten answer sheets using Optical Character Recognition.
 
-                <li><b>Marathi NLP Processing:</b></li>
+                <li>
+                    <b>Marathi NLP Processing:</b>
+                </li>
                 Analyzes grammar, sentence structure, and keyword matching for accurate evaluation.
 
-                <li><b>Keyword-Based Scoring:</b></li>
+                <li>
+                    <b>Keyword-Based Scoring:</b>
+                </li>
                 Compares student answers with predefined keywords to assign partial or full marks.
 
-                <li><b>Automated Marks Calculation:</b></li>
+                <li>
+                    <b>Automated Marks Calculation:</b>
+                </li>
                 Computes scores based on keyword matches, grammar correctness, and answer relevance.
 
-                <li><b>User-Friendly Interface:</b></li>
+                <li>
+                    <b>User-Friendly Interface:</b>
+                </li>
                 Allows teachers to upload answer sheets and view evaluated results effortlessly.
 
-                <li><b>Error & Grammar Feedback:</b></li>
+                <li>
+                    <b>Error & Grammar Feedback:</b>
+                </li>
                 Provides insights into grammatical mistakes and missing keywords for student improvement.
 
-                <li><b>Scalable for Educational Use:</b></li>
+                <li>
+                    <b>Scalable for Educational Use:</b>
+                </li>
                 Can be extended to multiple subjects and regional languages with minimal modifications.
                 
             </ul>
@@ -201,6 +212,32 @@
                 lightbox.style.display = 'none';
             }
         });
+
+
+        // Mobile menu functionality
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        // Toggle menu visibility
+        mobileMenu.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close menu when any link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            if (!nav.contains(event.target)) {
+                document.querySelector('nav ul').classList.remove('show');
+            }
+        });
+
     </script>
 
 </body>

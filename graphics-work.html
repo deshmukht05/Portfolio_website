@@ -6,12 +6,6 @@
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel="stylesheet" href="graphics_style.css">
     <link rel="icon" type="image/x-icon" href="assests/Logo.webp">
     <title>Tushar Portfolio/Graphic Designs</title>
@@ -29,6 +23,9 @@
             <li><a href="index.html">Designs</a></li>
             <li><a href="index.html">Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fi fi-br-menu-burger"></i>
+        </div>
     </nav>
 
     <!--------------------- Graphic Designs ----------------------->
@@ -149,6 +146,30 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && lightbox.style.display === 'flex') {
                 lightbox.style.display = 'none';
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        // Toggle menu visibility
+        mobileMenu.addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close menu when any link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            if (!nav.contains(event.target)) {
+                document.querySelector('nav ul').classList.remove('show');
             }
         });
     </script>
