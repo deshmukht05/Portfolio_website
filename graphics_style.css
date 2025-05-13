@@ -243,9 +243,7 @@ a:hover {
     background-color: #00b30d;
 }
 
-/* ==================== */
-/* RESPONSIVE STYLES */
-/* ==================== */
+/* Responsive Mode */
 
 @media (max-width: 992px) {
     /* Tablet adjustments */
@@ -285,6 +283,7 @@ a:hover {
     
     nav ul li {
         margin: 15px 0;
+        background-color: #15151f;
     }
     
     /* Mobile layout adjustments */
